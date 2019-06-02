@@ -3,7 +3,6 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
-const uuid = require('uuid/v4');
 const { NODE_ENV } = require('./config')
 const bookmarksRouter = require('./bookmarks/bookmarks-router')
 
@@ -43,11 +42,5 @@ app.use(function errorHandler(error, req, res, next) {
   res.status(500).json(response)
 })
 
-
-
-app.use(bookmarksRouter)
-
-
-    
 
 module.exports = app
